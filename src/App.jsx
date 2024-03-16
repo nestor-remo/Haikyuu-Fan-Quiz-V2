@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react';
+import './App.css';
+import FlashcardSet from './components/FlashcardSet';
 
-function App() {
-  const [count, setCount] = useState(0)
+const FLASHCARDS = [
+  {
+    id: 1,
+    question: 'What is the name of the team Hinata and Kageyama play for?',
+    answer: 'Karasuno',
+    difficulty: 'easy'
+  },
+  {
+    id: 2,
+    question: 'Who is the tallest player in Karasuno?',
+    answer: 'Tsukishima Kei',
+    difficulty: 'medium'
+  },
+  {
+    id: 3,
+    question: 'What is the number Hinata wears on his high school jersey?',
+    answer: '10',
+    difficulty: 'medium'
+  },
+  {
+    id: 4,
+    question: 'How many volumes of the manga are there?',
+    answer: '45',
+    difficulty: 'easy'
+  },
+  {
+    id: 5,
+    question: " What is Kageyama's nickname?",
+    answer: 'King of the Court',
+    difficulty: 'easy'
+  }
+];
 
+const App = () => {
+  const [flashcards, setFlashcards] = useState(FLASHCARDS);
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="App">
+      <h1>Haikyuu Fan Quiz!</h1>
+      <h3>Are you a true Haikyuu fan? Complete this quiz to find out!</h3>
+      <p> Number of Cards: { flashcards.length } </p>
+      <FlashcardSet cards={flashcards} />
+    </div>
+  );
+};
 
-export default App
+export default App;
