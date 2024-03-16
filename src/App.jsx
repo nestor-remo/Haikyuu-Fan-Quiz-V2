@@ -32,7 +32,20 @@ const FLASHCARDS = [
     question: " What is Kageyama's nickname?",
     answer: 'King of the Court',
     difficulty: 'easy'
+  },
+  {
+    id: 6,
+    question: 'Who is the captain of Karasuno?',
+    answer: 'Sawamura Daichi',
+    difficulty: 'easy'
+  },
+  {
+    id: 7,
+    question: "By the end of the series, what is Hinata's nickname?",
+    answer: 'The Greatest Decoy',
+    difficulty: 'medium'
   }
+
 ];
 
 const App = () => {
